@@ -60,7 +60,7 @@ function Deck() {
   }
 
   return (
-    <main className="Deck flex flex-col items-center">
+    <main className="flex flex-col items-center justify-center bg-green-500 h-screen">
       <div className="mb-4">
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded mx-2 hover:bg-blue-600 disabled:bg-gray-400"
@@ -70,14 +70,16 @@ function Deck() {
           Draw Card
         </button>
         <button
-          className="bg-green-500 text-white px-4 py-2 rounded mx-2 hover:bg-green-600 disabled:bg-gray-400"
+          className="bg-green-700 text-white px-4 py-2 rounded mx-2 hover:bg-green-800 disabled:bg-gray-400"
           onClick={shuffleDeck}
           disabled={isShuffling || !deck}
         >
           Shuffle Deck
         </button>
       </div>
-      <div className="relative h-96 w-96 bg-white border rounded-lg overflow-hidden">
+      <div
+        className="relative flex items-center justify-center h-[600px] w-[400px] bg-green-500 rounded-lg overflow-visible"
+      >
         {drawn.map((card) => (
           <Card key={card.id} name={card.name} image={card.image} />
         ))}
@@ -87,3 +89,4 @@ function Deck() {
 }
 
 export default Deck;
+
