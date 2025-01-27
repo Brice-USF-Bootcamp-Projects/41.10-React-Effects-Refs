@@ -1,12 +1,14 @@
 // src/app/page.js
 
-
+import Deck from "./components/deck/Deck";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="text-2xl font-bold mb-4">React Box App</h1>
-      <BoxList />
-    </div>
+    <main className="h-screen w-screen bg-green-500 text-black flex justify-center items-center">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-8">Deck of Cards</h1>
+        <Deck />
+      </div>
+    </main>
   );
 }

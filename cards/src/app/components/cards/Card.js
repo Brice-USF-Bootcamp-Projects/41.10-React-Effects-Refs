@@ -1,10 +1,10 @@
+// src/app/components/cards/Card.js
+
+"use client";
 import React, { useState } from "react";
-import "./Card.css";
 
 /** Single card: just renders the card as received from deck. */
-
 function Card({ name, image }) {
-  // get these once; it will never be updated for the same card
   const [{ angle, xPos, yPos }] = useState({
     angle: Math.random() * 90 - 45,
     xPos: Math.random() * 40 - 20,
@@ -13,11 +13,20 @@ function Card({ name, image }) {
 
   const transform = `translate(${xPos}px, ${yPos}px) rotate(${angle}deg)`;
 
-  return <img
-      className="Card"
+  return (
+    <img
+      className="Card transition-transform duration-300"
       alt={name}
       src={image}
-      style={{ transform }} />;
+      style={{
+        transform,
+        width: "150px",
+        height: "auto",
+        position: "absolute",
+      }}
+    />
+  );
 }
 
 export default Card;
+
